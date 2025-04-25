@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body  width="100%">
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(img/b1.webp);
+            /* background-repeat: no-repeat;  */
+            background-size: cover;
+            /* width: 1140px; */
+            /* background-image: url(img/b1.webp) width; */
+          
+            /* background-repeat: no-repeat; */
+            
+
+         
+           color: black;
+           font-size: 90x;
+        
+        }
+
+        /* .container {} */
+
+        .first {
+            width: 400px;
+            /* border: solid 1px black; */
+            margin: auto;
+            height: 400x;
+            /* display: flex; */
+        }
+
+        input {
+            height: 120px;
+            width: 120px;
+            margin: 5px 5px;
+            border: 2px solid ridge;
+            font-size:110px;
+            /* color:wheat;
+            text-shadow:
+            1px 3px 5px #ff2d55
+            0 0 10px #ff2d55
+            0 0 20px #ff2d55
+            0 0 40px #ff0033; */
+             /* color:white;
+            text-shadow: rgb(255, 0, 0) 1px 0px 10px;
+            text-shadow: rgb(255, 0, 0) 1px 0px 10px; */
+            text-shadow:
+         
+            1px 1px 2px blue,
+            0 0 0.1em rgb(255, 255, 255),
+            0 0 0.1em rgb(255, 255, 255);
+            background-color: gray;
+            
+            /* background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%); */
+
+        }
+        h1 {
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+                0 3px 0 #ccc, 0 4px 0 #ccc,
+                0 5px 0 #ccc, 0 6px 0 #ccc,
+                0 7px 0 #ccc, 0 8px 0 #ccc,
+                0 9px 0 #ccc, 0 10px 0 #ccc,
+                0 11px 0 #ccc, 0 12px 0 #ccc,
+                0 20px 30px rgba(0, 0, 0, 0.5);
+              text-align: start;
+            margin: 0;
+            margin-top: 0;
+            color: black;
+            font-size: 8em;
+            
+            font-family: Arial, Helvetica, sans-serif;
+        }
+     
+    </style>
+    <div class="container">
+    <h1>WELLCOME</h1>
+
+        <div class="box">
+            
+            <div class="first ">
+                <div class="row">
+                <input type="button" id="btn1" onclick="enter('btn1')" class="btn">
+                <input type="button" id="btn2" onclick="enter('btn2')" class="btn">
+                <input type="button" id="btn3" onclick="enter('btn3')" class="btn">
+                <input type="button" id="btn4" onclick="enter('btn4')" class="btn">
+                <input type="button" id="btn5" onclick="enter('btn5')" class="btn">
+                <input type="button" id="btn6" onclick="enter('btn6')" class="btn">
+                <input type="button" id="btn7" onclick="enter('btn7')" class="btn">
+                <input type="button" id="btn8" onclick="enter('btn8')" class="btn">
+                <input type="button" id="btn9" onclick="enter('btn9')" class="btn">
+
+
+            </div>
+
+        </div>
+        <h2 id="out"></h2>
+    </div>
+    <script>
+         btns=document.querySelectorAll('.btn');
+        cnt = 1;
+        flag = 0;
+        function enter(type) {
+            
+            if (flag == 0) {
+                
+                // document.write(fontcolor('blue')); 
+                document.getElementById(type).value = "O";
+                flag = 1;
+            }
+            else {
+                document.getElementById(type).value = "X";
+                flag = 0;
+
+            }
+             btn1 = document.getElementById("btn1").value;
+             btn2 = document.getElementById("btn2").value;
+             btn3 = document.getElementById("btn3").value;
+            btn4 = document.getElementById("btn4").value;
+            btn5 = document.getElementById("btn5").value;
+            btn6 = document.getElementById("btn6").value;
+            btn7 = document.getElementById("btn7").value;
+            btn8 = document.getElementById("btn8").value;
+            btn9 = document.getElementById("btn9").value;
+
+            
+            if (type == "btn1") {
+                document.getElementById("btn1").disabled = true;
+            }
+            else if (type == "btn2") {
+                document.getElementById("btn2").disabled = true;
+            }
+            else if (type == "btn3") {
+                document.getElementById("btn3").disabled = true;
+            } else if (type == "btn4") {
+                document.getElementById("btn4").disabled = true;
+            } else if (type == "btn5") {
+                document.getElementById("btn5").disabled = true;
+            }
+            else if (type == "btn6") {
+                document.getElementById("btn6").disabled = true;
+            } else if (type == "btn7") {
+                document.getElementById("btn7").disabled = true;
+            }
+            else if (type == "btn8") {
+                document.getElementById("btn8").disabled = true;
+            } else if (type == "btn9") {
+                document.getElementById("btn9").disabled = true;
+            }
+
+
+
+            if (btn1 == "X" && btn2 == "X" && btn3 == "X") {
+                document.getElementById("out").innerText  = "Match Is Won  X";
+                btns.disabled;
+            }
+            else if (btn4 == "X" && btn5 == "X" && btn6 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+                
+            }
+            else if (btn7 == "X" && btn8 == "X" && btn9 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            else if (btn1 == "X" && btn4 == "X" && btn7 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            else if (btn2 == "X" && btn5 == "X" && btn8 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            else if (btn3 == "X" && btn6 == "X" && btn9 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            else if (btn1 == "X" && btn5 == "X" && btn9 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            else if (btn3 == "X" && btn5 == "X" && btn7 == "X") {
+                document.getElementById("out").innerText = "Match Is Won  X";
+            }
+            
+
+
+
+            if (btn1 == "O" && btn2 == "O" && btn3 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+                
+            }
+            
+            else if (btn4 == "O" && btn5 == "O" && btn6 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn7 == "O" && btn8 == "O" && btn9 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn1 == "O" && btn4 == "O" && btn7 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn2 == "O" && btn5 == "O" && btn8 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn3 == "O" && btn6 == "O" && btn9 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn1 == "O" && btn5 == "O" && btn9 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+            }
+            else if (btn3 == "O" && btn5 == "O" && btn7 == "O") {
+                document.getElementById("out").innerText = "Match Is Won  O";
+
+
+            }
+            if (cnt >= 9) {
+                // tie
+                if (
+                    btn1.value != "" &&
+                    btn2.value != "" &&
+                    btn3.value != "" &&
+                    btn4.value != "" &&
+                    btn5.value != "" &&
+                    btn6.value != "" &&
+                    btn7.value != "" &&
+                    btn8.value != "" &&
+                    btn9.value != ""
+                ) {
+                    alert("Your Match is a Tie.");
+                    document.getElementById("out").innerHTML = "<h2>Your Match Tie</h2>";
+                }              
+                
+            }
+            cnt++;
+        }
+
+
+       
+        
+
+    </script>
+</body>
+
+</html>
